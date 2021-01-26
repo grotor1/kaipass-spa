@@ -2,13 +2,94 @@
     --cblack: #2A363B;
     --cred: #E84A5F;
     --cpink: #FF847C;
-    --cgray: #E5E5E5;
+    --cgray: #F2F2F2;
+}
+body{
+    color: var(--cblack);
+
 }
 
 .mainpage-wrapper{
     position: relative;
+    display:flex;
     z-index: -20;
     flex-basis: 100%;
     background-color: var(--cgray);
     height: calc(100% - 70px);
+}
+.mainpage-wrapper__left-section{
+    width:57%;
+    height:100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #E84A5F;
+    
+}
+.mainpage-wrapper__right-section{
+    width:43%;
+    height:100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #FF847C;
+}
+
+/*------------------------courses section-----------------------*/
+
+.mainpage-wrapper__left-section__courses-block{
+    width:85%;
+    height: 60%;
+    align-self: center;
+}
+.mainpage-wrapper__left-section__courses-block__content{
+    width:100%;
+    height: 84%;
+    border-radius: 12px;
+    background-color: white;
+}
+.mainpage-wrapper__left-section__courses-block-title h3{
+    font-size: 28px;
+    font-weight:500;
+}
+
+/*------------------------------achivments section---------------------*/
+
+.mainpage-wrapper__left-section__achivments-block{
+    width:85%;
+    height: 40%;
+    align-self: center;
+}
+
+.mainpage-wrapper__left-section__achivments-block__content{
+    width:100%;
+    height: 65%;
+    border-radius: 12px;
+    background-color: white;
+}
+.mainpage-wrapper__left-section__achivments-block__title h3{
+    font-size: 28px;
+    font-weight:500;
+}
+
+/*-------------------------------YOUR TASKS SECTION---------------------------------*/
+
+.mainpage-wrapper__right-section__your-tasks__title h3{
+    font-size: 28px;
+    font-weight:500;
+    text-align: center;
+}
+
+.mainpage-wrapper__right-section__your-tasks{
+    width:80%;
+    height: 100%;
+    align-self: center;
+}
+
+.mainpage-wrapper__right-section__your-tasks__content{
+    width: 100%;
+    height: 80%;
+    
+    background-color: white;
+    border-radius: 12px;
 }
