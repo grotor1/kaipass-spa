@@ -1,0 +1,14 @@
+:root{
+    --cblack: #2A363B;
+    --cred: #E84A5F;
+    --cpink: #FF847C;
+    --cgray: #E5E5E5;
+}
+
+.mainpage-wrapper{
+    position: relative;
+    z-index: -20;
+    flex-basis: 100%;
+    background-color: var(--cgray);
+    height: calc(100% - 70px);
+}
