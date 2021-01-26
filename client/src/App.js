@@ -1,26 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Navbar from './components/Navbar/Navbar.js'
+import Header from './components/Header/Header.js'
+import footer from './media/Kaipass-footer_main-theme.svg';
+import MainPage from './components/MainPage/MainPage.js'
+import React from 'react'
 
-function App() {
-  const da = "sadasdas";
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>{da}</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+class App extends React.Component{
+  render(){
+    return (
+      <div className="App">
+        <div className="App-Wrapper">
+        <Navbar></Navbar>
+        <div className="left-section">
+        <Header></Header>
+        <MainPage></MainPage>
+        
+
+          <div className="left-section__footer">
+            <img ></img>
+          </div>
+        </div>
+        </div>
+      </div>
+    );
+  }
+  
 export default App;
