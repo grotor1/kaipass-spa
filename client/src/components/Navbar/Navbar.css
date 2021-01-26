@@ -74,7 +74,7 @@
     position: relative;
     display: flex;
     align-content: center;
-    background-color:none;
+    background-color: none;
     border-top-right-radius:12px ;
     border-bottom-right-radius: 12px;
     width: 75%;
@@ -113,20 +113,32 @@
   width: 115%;
   height: 100%;
   background: var(--cred);
-  transform: translate3d(-100%,0,0) translate3d(-1px,0,0);
+  transform: scaleX(0) ;
   transition: transform .7s;
   border-top-right-radius:12px ;
   border-bottom-right-radius: 12px;
   z-index: -100000;
+  visibility: hidden;
 }
 
 
 .navbar__buttons-holder__button a:hover  .navbar__buttons-holder__button-movement::before{
-  transform: translate3d(0,0,0);
+    transform: scaleX(1);
+    transform-origin: left;
+    visibility: visible;
 
 }
+.navbar__buttons-holder__button a:hover .white-svg{
+    fill:white;
+}
+.navbar__buttons-holder__button a:hover{
+    color:white;
+    transition: 0,7s;
+}
+
 .navbar__buttons-holder__button a:hover .navbar__buttons-holder__button-movement::after{
   transform: translate3d(0,0,0);
+  visibility: hidden;
 
 }
 
@@ -167,7 +179,6 @@
     border-radius: 50%;
     background-color: #C4C4C4;
     border: 1px solid var(--cblack);
-
 }
 
 .navbar__account-holder__account-text{
