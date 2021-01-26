@@ -7,9 +7,10 @@ const mongoose = require('mongoose');
 const UserLog = require("./models/usersLogModel");
 const UserInf = require("./models/usersInfModel");
 const Task = require("./models/tasksModel");
-const Lesson = require("./models/lessonsModel")
-const Course = require("./models/coursesModel")
-const Theme = require("./models/themesModel")
+const Lesson = require("./models/lessonsModel");
+const Course = require("./models/coursesModel");
+const Theme = require("./models/themesModel");
+const Achievements = require("./models/achievementsModel");
 
 // Loads env variables
 require('dotenv').config()
@@ -133,7 +134,7 @@ router.post("/lessonAdd", (req, res) => {
 router.post("/coursesAdd", (req, res) => {
     const course = new Course();
     const {name, desc, hours, previewSrc, userCount, lessonCount, lessons, achievements} = req.body;
-    if(!name || !desc || !hours || !previewSrc || !lessonCount || !lessons){
+    if (!name || !desc || !hours || !previewSrc || !lessonCount || !lessons) {
         return res.json({
             success: false,
             error: 'You must provide an name, desc, hours, previewSrc, maxLessonCount and text'
@@ -156,7 +157,7 @@ router.post("/coursesAdd", (req, res) => {
 router.post("/themesAdd", (req, res) => {
     const theme = new Theme();
     const {name, desc, coursesCount, courses, achievements} = req.body;
-    if(!name || !desc){
+    if (!name || !desc) {
         return res.json({
             success: false,
             error: 'You must provide an name, desc'
@@ -169,6 +170,59 @@ router.post("/themesAdd", (req, res) => {
     theme.achievements = achievements;
 });
 
+router.get("/usersInfGet/:nickname", (req, res) => {
+    const {nickname} = req.params;
+    UserInf.findOne({"nickname": nickname}, (err, userInf) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: userInf});
+    });
+});
+
+router.get("/themesGet", (req, res) => {
+    Theme.find((err, themes) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: themes});
+    });
+});
+
+router.get("/coursesGet", (req, res) => {
+    Course.find((err, courses) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: courses});
+    });
+});
+
+router.get("/coursesGet/:_id_course", (req, res) => {
+    const {_id_course} = req.params;
+    Course.findById(_id_course, (err, course) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: course});
+    });
+});
+
+router.get("/lessonsGet/:_id_lesson", (req, res) => {
+    const {_id_lesson} = req.params;
+    Lesson.findById(_id_lesson, (err, lesson) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: lesson});
+    });
+});
+
+router.get("/taskGet/:_id_task", (req, res) => {
+    const {_id_task} = req.params;
+    Task.findById(_id_task, (err, task) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: task});
+    });
+});
+
+router.get("/achievementsGet/:_id_achievements", (req, res) => {
+    const {_id_achievements} = req.params;
+    Achievements.findById(_id_achievements, (err, achievements) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: achievements});
+    });
+})
 
 app.use('/api', router);
 // console.log that your server is up and running
