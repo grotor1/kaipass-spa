@@ -2,7 +2,7 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar.js'
 import Header from './components/Header/Header.js'
-import footer from './media/Kaipass-footer_main-theme.svg';
+import footer from './media/Footer_Frame.svg';
 import MainPage from './components/MainPage/MainPage.js'
 import React from 'react'
 
@@ -19,7 +19,7 @@ class App extends React.Component{
         
 
           <div className="left-section__footer">
-            <img ></img>
+            <img src={footer}></img>
           </div>
         </div>
         </div>

@@ -23,73 +23,206 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #E84A5F;
     
 }
-.mainpage-wrapper__right-section{
-    width:43%;
-    height:100%;
+.mainpage-wrapper__right-section {
+    width: 43%;
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #FF847C;
 }
 
 /*------------------------courses section-----------------------*/
 
 .mainpage-wrapper__left-section__courses-block{
-    width:85%;
-    height: 60%;
     align-self: center;
+    width: 600px;
+    position: relative;
+    z-index: 1000;
+
 }
+
 .mainpage-wrapper__left-section__courses-block__content{
-    width:100%;
-    height: 84%;
+    width: 600px;
+    height: 400px;
     border-radius: 12px;
     background-color: white;
+    -webkit-box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
+    box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
 }
+
 .mainpage-wrapper__left-section__courses-block-title h3{
-    font-size: 28px;
+    font-size: 24px;
     font-weight:500;
+    line-height: 0;
+    line-height: 10px;
+}
+
+.mainpage-wrapper__left-section__courses-block__content__top-section{
+    height: 20%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-content: center;
+}
+.mainpage-wrapper__left-section__courses-block__content__top-section__right-section{
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.mainpage-wrapper__left-section__courses-block__content__top-section__left-section{
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 10px;
+
+}
+.mainpage-wrapper__left-section__courses-block__content__top-section__left-section h3{
+    line-height: 0;
+    font-size:20px;
+    font-weight: 500;
+}
+.mainpage-wrapper__left-section__courses-block__content__top-section__left-section p{
+    line-height: 0;
+    font-size:14px;
+}
+
+.mainpage-wrapper__left-section__courses-block__content__top-section__right-section p{
+    line-height: 1.2;
+    font-size:11px;
+    margin-left: 10px;
+}
+
+.mainpage-wrapper__left-section__courses-block__content__top-section__left-section span{
+    color: var(--cred);
+}
+
+.mainpage-wrapper__left-section__courses-block__content__bottom-section{
+    width: 100%;
+    height: 80%;
+    display: flex;
+
+}
+
+.mainpage-wrapper__left-section__courses-block__content__bottom-section__left-section{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.mainpage-wrapper__left-section__courses-block__content__bottom-section__left-section__img-block{
+    height: 250px;
+    width: 250px;
+    background-color: #C4C4C4;
+    border-radius: 12px;
+}
+
+.mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section{
+    height: 100%;
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__title p{
+    font-weight: 500;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 0;
+
+}
+
+.mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__course-button{
+    width: 150px;
+    height: 35px;
+    background-color: #E84A5F;
+    position: absolute;
+    top:215px;
+    border-radius: 12px;
+}
+.mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__course-button p{
+    font-size: 18px;
+    line-height: 0;
+    padding-left: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__main-text p{
+    font-size: 12px;
+    opacity: .65;
+}
+.mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section a{
+    text-decoration: none;
 }
 
 /*------------------------------achivments section---------------------*/
 
 .mainpage-wrapper__left-section__achivments-block{
-    width:85%;
-    height: 40%;
+    width:600px;
+    height: 85%;
     align-self: center;
 }
 
 .mainpage-wrapper__left-section__achivments-block__content{
     width:100%;
-    height: 65%;
+    height: 181px;
     border-radius: 12px;
     background-color: white;
+    -webkit-box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
+    box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
+
+
 }
 .mainpage-wrapper__left-section__achivments-block__title h3{
-    font-size: 28px;
+    font-size: 24px;
     font-weight:500;
+    line-height: 10px;
 }
 
 /*-------------------------------YOUR TASKS SECTION---------------------------------*/
 
 .mainpage-wrapper__right-section__your-tasks__title h3{
-    font-size: 28px;
+    font-size: 24px;
     font-weight:500;
     text-align: center;
+    line-height: 10px;
 }
 
 .mainpage-wrapper__right-section__your-tasks{
-    width:80%;
-    height: 100%;
-    align-self: center;
+    width:93%;
+    height: 95%;
+    align-self: start;
+
 }
 
 .mainpage-wrapper__right-section__your-tasks__content{
     width: 100%;
     height: 80%;
-    
+    -webkit-box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
+    box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
     background-color: white;
     border-radius: 12px;
+}
+
+/* --------------------- Carousel ----------------------- */
+
+.rec-arrow{
+    display: none;
+}
+.rec-pagination {
+    position: absolute;
+    top: 400px;
+    right: 100px;
+
+}
+.rec-dot-activate{
+    background-color: var(--cblack);
+    opacity: .6;
+    border:none;
 }
