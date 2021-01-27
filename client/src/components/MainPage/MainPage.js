@@ -1,8 +1,10 @@
 import './MainPage.css'
 import React from 'react'
 import ReactDOM from "react-dom";
-import Carousel from "react-elastic-carousel";
+import Carousel from 'react-elastic-carousel';
 import item from "./item.js"
+import './css/hover.css'
+import arrow from './media/right-arrow.svg'
 
 class MainPage extends React.Component{
     render(){
@@ -10,20 +12,17 @@ class MainPage extends React.Component{
             <div className="mainpage-wrapper">
                 <div className="mainpage-wrapper__left-section">
 
-
-
-
-
                     <div className="mainpage-wrapper__left-section__courses-block">
                         <div className="mainpage-wrapper__left-section__courses-block-title">
                             <h3>Выбери свой путь обучения</h3>
                         </div>
-                        <Carousel itemsToScroll={1} itemsToShow={1} enableAutoPlay autoPlaySpeed={1500}>
+
                             <div className="mainpage-wrapper__left-section__courses-block__content">
+                                <Carousel>
 
-                                <item>
+                                    <item>
 
-                                    <div className="mainpage-wrapper__left-section__courses-block__content__top-section">
+                                        <div className="mainpage-wrapper__left-section__courses-block__content__top-section">
                                         <div className="mainpage-wrapper__left-section__courses-block__content__top-section__left-section">
                                             <h3>React JS для новичков</h3>
                                             <p><span>nnn</span> участников</p>
@@ -32,7 +31,7 @@ class MainPage extends React.Component{
                                             <p>nnn часов<br/>Тип материала</p>
                                         </div>
                                     </div>
-                                    <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section">
+                                        <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section">
                                         <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__left-section">
                                             <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__left-section__img-block">
                                                 <img src="" alt="course-image"/>
@@ -45,20 +44,20 @@ class MainPage extends React.Component{
                                             <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__main-text">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                             </div>
-                                            <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__course-button">
-                                                <a href="">
-                                                    <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__course-butoon__button">
-
+                                            <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__course-button hvr-grow-shadow">
+                                                <a className="" href="">
+                                                    <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__course-button__button">
+                                                        <p>Начать</p>
+                                                        <img src={arrow} alt=""/>
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-                                </item>
-                            </div>
-                            <div className="mainpage-wrapper__left-section__courses-block__content">
-                                <item>
 
+                                    </item>
+
+                                <item>
 
                                     <div className="mainpage-wrapper__left-section__courses-block__content__top-section">
                                         <div className="mainpage-wrapper__left-section__courses-block__content__top-section__left-section">
@@ -82,19 +81,21 @@ class MainPage extends React.Component{
                                             <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__main-text">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                             </div>
-                                            <a href="">
-                                                <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__course-button">
-                                                    <p>Начать</p>
-                                                </div>
-                                            </a>
+                                            <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__course-button hvr-grow-shadow">
+                                                <a className="" href="">
+                                                    <div className="mainpage-wrapper__left-section__courses-block__content__bottom-section__right-section__course-button__button">
+                                                        <p>Начать</p>
+                                                        <img src={arrow} alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
 
                                 </item>
-                            </div>
-                        </Carousel>
-                    </div>
 
+                                </Carousel>
+                            </div>
 
 
 
@@ -103,7 +104,16 @@ class MainPage extends React.Component{
                         <div className="mainpage-wrapper__left-section__achivments-block__title">
                             <h3>Будущие достижения</h3>
                         </div>
-                        <div className="mainpage-wrapper__left-section__achivments-block__content"></div>
+                        <div className="mainpage-wrapper__left-section__achivments-block__content">
+                            <Carousel itemsToShow={3} itemsToScroll={1} >
+                                <item>
+                                    <div className="mainpage-wrapper__left-section__achivments-block__content__carousel-achive"></div>
+                                </item>
+                                
+
+                            </Carousel>
+                        </div>
+                    </div>
                     </div>
                 </div>
 

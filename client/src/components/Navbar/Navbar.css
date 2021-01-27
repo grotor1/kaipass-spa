@@ -15,6 +15,7 @@
     position: relative;
     flex-wrap: wrap;
     flex-direction: column;
+    z-index: 100000;
     color: #2A363B;
 }
 .navbar__logo-holder{
