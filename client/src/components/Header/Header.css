@@ -1,6 +1,6 @@
 .header{
     position: relative;
-    z-index: -10;
+    z-index: 10000;
     flex-basis: 100%;
     height: 70px;
     background-color: white;
