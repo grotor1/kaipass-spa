@@ -175,10 +175,11 @@ class Navbar extends React.Component {
 
                         </div>
                         <div className="navbar__account-holder__account-text">
-                            <p>{this.props.userInf.nickname}<br/><span>{this.props.userInf.role}</span></p>
+                            <p>Nickname<br/><span>Account type</span></p>
                         </div>
                     </div>
                 </div>
+
             </div>
         )
     }

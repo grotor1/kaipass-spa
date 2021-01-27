@@ -6,45 +6,18 @@ import MainPage from './components/MainPage/MainPage.js';
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-const login = "grotor"
-
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            err: "",
-            currentUser: {}
-        };
-    }
-
-    loadUserInfFromServer(login) {
-        fetch(`/api/usersInfGet/${login}`)
-            .then(data => data.json())
-            .then((res) => {
-                if (!res.success) {
-                    this.setState({error: res.error});
-                } else {
-                    this.setState({currentUser: res.data});
-                }
-            });
-    }
-
-    componentDidMount() {
-        this.loadUserInfFromServer(login);
-        console.log(this.state.currentUser + this.state.err);
-    }
-
     render() {
         return (
             <Router>
                 <div className="App">
                     <div className="App-Wrapper">
-                        <Navbar  userInf={this.state.currentUser}/>
+                        <Navbar></Navbar>
                         <div className="left-section">
                             <Header/>
                             <Switch>
                                 <Route exact path="/">
-                                    <MainPage userInf={this.state.currentUser}/>
+                                    <MainPage/>
                                 </Route>
                                 <Route exact path="/course">
                                     c
@@ -60,5 +33,4 @@ class App extends React.Component {
         );
     }
 }
-
 export default App;

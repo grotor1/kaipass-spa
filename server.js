@@ -177,7 +177,6 @@ router.post("/themesAdd", (req, res) => {
 
 router.get("/usersInfGet/:nickname", (req, res) => {
     const {nickname} = req.params;
-    console.log(nickname + " dsf ");
     UserInf.findOne({"nickname": nickname}, (err, userInf) => {
         if (err) return res.json({success: false, error: err});
         return res.json({success: true, data: userInf});
