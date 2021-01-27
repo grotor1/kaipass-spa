@@ -133,8 +133,8 @@ router.post("/lessonAdd", (req, res) => {
 
 router.post("/coursesAdd", (req, res) => {
     const course = new Course();
-    const {name, desc, hours, previewSrc, userCount, lessonCount, lessons, achievements} = req.body;
-    if (!name || !desc || !hours || !previewSrc) {
+    const {name, desc, hours, previewTitle,previewSrc,  userCount, lessonCount, lessons, achievements} = req.body;
+    if (!name || !desc || !hours || !previewSrc || !previewTitle) {
         return res.json({
             success: false,
             error: 'You must provide an name, desc, hours, previewSrc, maxLessonCount and text'
@@ -144,6 +144,7 @@ router.post("/coursesAdd", (req, res) => {
     course.desc = desc;
     course.hours = hours;
     course.previewSrc = previewSrc;
+    course.previewTitle = previewTitle;
     course.userCount = userCount || 0;
     course.lessonCount = lessonCount || 0;
     course.lessons = lessons || [];
