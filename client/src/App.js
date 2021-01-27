@@ -7,24 +7,24 @@ import MainPage from './components/MainPage/MainPage.js'
 import React from 'react'
 
 
-class App extends React.Component{
-  render(){
-    return (
-      <div className="App">
-        <div className="App-Wrapper">
-        <Navbar></Navbar>
-        <div className="left-section">
-        <Header></Header>
-        <MainPage></MainPage>
-        
+class App extends React.Component {
+    render() {
+        return (
+            <div className="App">
+                <div className="App-Wrapper">
+                    <Navbar></Navbar>
+                    <div className="left-section">
+                        <Header></Header>
+                        <MainPage></MainPage>
 
-          <div className="left-section__footer">
-            <img src={footer}></img>
-          </div>
-        </div>
-        </div>
-      </div>
-    );
-  }
-  
+
+                        <div className="left-section__footer">
+                            <img src={footer}></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
 export default App;
