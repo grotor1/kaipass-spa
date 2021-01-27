@@ -2,6 +2,7 @@ import './MainPage.css'
 import React from 'react'
 import ReactDOM from "react-dom";
 import Carousel from 'react-elastic-carousel';
+import AchivmentCarousel from "./AchivmentCarousel.js";
 import item from "./item.js"
 import './css/hover.css'
 import arrow from './media/right-arrow.svg'
@@ -105,13 +106,7 @@ class MainPage extends React.Component{
                             <h3>Будущие достижения</h3>
                         </div>
                         <div className="mainpage-wrapper__left-section__achivments-block__content">
-                            <Carousel itemsToShow={3} itemsToScroll={1} >
-                                <item>
-                                    <div className="mainpage-wrapper__left-section__achivments-block__content__carousel-achive"></div>
-                                </item>
-                                
-
-                            </Carousel>
+                            <AchivmentCarousel></AchivmentCarousel>
                         </div>
                     </div>
                     </div>
@@ -129,7 +124,15 @@ class MainPage extends React.Component{
                             <h3>Твои задания</h3>
                         </div>
                         <div className="mainpage-wrapper__right-section__your-tasks__content">
+                            <div className="mainpage-wrapper__right-section__your-tasks__content__top-section">
 
+                            </div>
+                            <div className="mainpage-wrapper__right-section__your-tasks__content__stripe">
+
+                            </div>
+                            <div className="mainpage-wrapper__right-section__your-tasks__content__bottom-section">
+
+                            </div>
                         </div>
 
                     </div>
