@@ -132,7 +132,10 @@ class MainPage extends React.Component{
 
                             </div>
                             <div className="mainpage-wrapper__right-section__your-tasks__content__bottom-section">
-
+                                <div className="mainpage-wrapper__right-section__your-tasks__content__bottom-section__title">
+                                    <p>Твои очки обучения</p>
+                                </div>
+                                <div className="mainpage-wrapper__right-section__your-tasks__content__bottom-section__under-construction"></div>
                             </div>
                         </div>
 
