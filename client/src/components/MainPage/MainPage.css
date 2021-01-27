@@ -225,11 +225,12 @@ body{
     border-radius: 12px;
 }
 .mainpage-wrapper__right-section__your-tasks__content__top-section{
-    width: 80%;
+    width: 90%;
     height: 60%;
     background-color: #E84A5F;
     margin: 0 auto;
 }
+
 .mainpage-wrapper__right-section__your-tasks__content__bottom-section{
     width: 80%;
     height: 39.5%;
@@ -263,6 +264,9 @@ body{
     height: 13px!important;
     margin: 0!important;
     margin-left: 7px!important;
+}
+.rec-slider{
+
 }
 .rec-dot_active{
     background-color: var(--cred)!important;
