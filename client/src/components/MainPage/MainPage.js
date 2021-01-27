@@ -5,6 +5,7 @@ import AchivmentCarousel from "./AchivmentCarousel.js";
 import item from "./item.js"
 import './css/hover.css'
 import arrow from './media/right-arrow.svg'
+import TasksScrollbar from "./TasksScrollbar";
 
 class MainPage extends React.Component {
     constructor(props) {
@@ -118,7 +119,7 @@ class MainPage extends React.Component {
                         </div>
                         <div className="mainpage-wrapper__right-section__your-tasks__content">
                             <div className="mainpage-wrapper__right-section__your-tasks__content__top-section">
-
+                                <TasksScrollbar></TasksScrollbar>
                             </div>
                             <div className="mainpage-wrapper__right-section__your-tasks__content__stripe">
 

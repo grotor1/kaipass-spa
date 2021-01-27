@@ -3,9 +3,7 @@
     height: 181px;
     background-color: white;
     border-radius: 12px;
-    -webkit-box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
-    box-shadow: 0px 27px 58px -8px rgba(0,0,0,0.25);
+
 }
 .mainpage-wrapper__left-section__achivments-block__content__carousel-achive__border-top{
     width: 100%;
@@ -41,6 +39,7 @@
     display: inline-block;
     line-height: 0;
 }
+
 
 .progressbar{
     margin-left: 10px;

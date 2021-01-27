@@ -4,6 +4,8 @@ body{
   font-family: 'Rubik', sans-serif;
   display: flex;
   justify-content: center;
+    width: 100%;
+    height: 90vh;
 }
 .App{
   width:100vw;
