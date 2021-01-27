@@ -227,15 +227,16 @@ body{
 .mainpage-wrapper__right-section__your-tasks__content__top-section{
     width: 90%;
     height: 60%;
-    background-color: #E84A5F;
     margin: 0 auto;
 }
 
 .mainpage-wrapper__right-section__your-tasks__content__bottom-section{
     width: 80%;
     height: 39.5%;
-    background-color: #E84A5F;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .mainpage-wrapper__right-section__your-tasks__content__stripe{
     width: 80%;
@@ -243,7 +244,20 @@ body{
     background-color: #C4C4C4;
     margin: 0 auto;
 }
+.mainpage-wrapper__right-section__your-tasks__content__bottom-section__title{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    height: 35px;
 
+}
+.mainpage-wrapper__right-section__your-tasks__content__bottom-section__under-construction{
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    background-color: #C4C4C4;
+}
 /* --------------------- Carousel ----------------------- */
 
 .rec-arrow{
