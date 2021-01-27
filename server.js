@@ -122,9 +122,9 @@ router.post("/lessonAdd", (req, res) => {
     lesson.text = text;
     lesson.mediaPhotoSrc = mediaPhotoSrc || "";
     lesson.mediaVideoSrc = mediaPhotoSrc || "";
-    lesson.mediaFileUrl = mediaFileUrl;
-    lesson.tasks = tasks;
-    lesson.achievements = achievements;
+    lesson.mediaFileUrl = mediaFileUrl || "";
+    lesson.tasks = tasks || [];
+    lesson.achievements = achievements || [];
     lesson.save(err => {
         if (err) return res.json({success: false, error: err})
         return res.json({success: true});
@@ -133,8 +133,8 @@ router.post("/lessonAdd", (req, res) => {
 
 router.post("/coursesAdd", (req, res) => {
     const course = new Course();
-    const {name, desc, hours, previewSrc, userCount, lessonCount, lessons, achievements} = req.body;
-    if (!name || !desc || !hours || !previewSrc || !lessonCount || !lessons) {
+    const {name, desc, hours, previewTitle,previewSrc,  userCount, lessonCount, lessons, achievements} = req.body;
+    if (!name || !desc || !hours || !previewSrc || !previewTitle) {
         return res.json({
             success: false,
             error: 'You must provide an name, desc, hours, previewSrc, maxLessonCount and text'
@@ -144,10 +144,11 @@ router.post("/coursesAdd", (req, res) => {
     course.desc = desc;
     course.hours = hours;
     course.previewSrc = previewSrc;
-    course.userCount = userCount;
-    course.lessonCount = lessonCount;
-    course.lessons = lessons;
-    course.achievements = achievements;
+    course.previewTitle = previewTitle;
+    course.userCount = userCount || 0;
+    course.lessonCount = lessonCount || 0;
+    course.lessons = lessons || [];
+    course.achievements = achievements || [];
     course.save(err => {
         if (err) return res.json({success: false, error: err})
         return res.json({success: true});
@@ -165,13 +166,18 @@ router.post("/themesAdd", (req, res) => {
     }
     theme.name = name;
     theme.desc = desc;
-    theme.coursesCount = coursesCount;
-    theme.courses = courses;
-    theme.achievements = achievements;
+    theme.coursesCount = coursesCount || 0;
+    theme.courses = courses || [];
+    theme.achievements = achievements || [];
+    theme.save(err => {
+        if (err) return res.json({success: false, error: err})
+        return res.json({success: true});
+    });
 });
 
 router.get("/usersInfGet/:nickname", (req, res) => {
     const {nickname} = req.params;
+    console.log(nickname + " dsf ");
     UserInf.findOne({"nickname": nickname}, (err, userInf) => {
         if (err) return res.json({success: false, error: err});
         return res.json({success: true, data: userInf});
