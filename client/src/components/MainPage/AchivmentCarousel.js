@@ -34,19 +34,21 @@ class AchivmentCarousel extends React.Component {
                 if (!res.success) {
                     this.setState({error: res.error});
                 } else {
-                    if (this.state.currentAchievements[0]._id === "") {
+                    if (this.state.currentAchievements[0].desc === "") {
                         this.setState({
                             ...this.state,
                             currentAchievements: [{...res.data, currentValue: currentValue}]
+                        }, () => {
                         });
+                    } else {
+                        const currentAchievements = this.state.currentAchievements;
+                        currentAchievements.push({...res.data, currentValue: currentValue})
+                        this.setState({
+                                ...this.state,
+                                currentAchievements: currentAchievements
+                            }
+                        );
                     }
-                    const currentAchievements = this.state.currentAchievements;
-                    currentAchievements.push({...res.data, currentValue: currentValue})
-                    this.setState({
-                            ...this.state,
-                            currentAchievements: currentAchievements
-                        }
-                    );
                 }
             });
     }

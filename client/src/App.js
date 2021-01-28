@@ -24,7 +24,7 @@ class App extends React.Component {
                 achievements: [
                     {
                         _id_achievements: "",
-                        currentValue: 10
+                        currentValue: 0
                     }
                 ],
                 nickname: "",
