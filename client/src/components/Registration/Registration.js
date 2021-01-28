@@ -23,7 +23,7 @@ class Registration extends React.Component{
                                 <img src={right_arrow_login} alt=""/>
                             </div>
 
-                        </div>
+                        </div>g
                     </div>
                     <div className="registration-wrapper__content__right-section">
                         <img className='right-svg' src={left_svg} alt=""/>
