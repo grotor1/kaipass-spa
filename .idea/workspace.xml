@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/react" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="77ff3dfd-a6f3-4866-8247-65c10598b596" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Registration/Registration.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Registration/Registration.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Registration/hover.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Registration/media/fuji-mountain-sunrise.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Registration/media/right-arrow-login.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Registration/media/vector1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Registration/media/vector2.svg" afterDir="false" />
+    <list default="true" id="77ff3dfd-a6f3-4866-8247-65c10598b596" name="Default Changelist" comment="ok">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/MainPage/TasksScrollbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/MainPage/TasksScrollbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Registration/Registration.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Registration/Registration.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +65,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1nbxU9uo1jot423gVcBdSrJ4vd5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -152,7 +178,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="react" />
+                        <option value="origin/react" />
                       </list>
                     </value>
                   </entry>
