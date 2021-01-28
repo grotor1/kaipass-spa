@@ -2,9 +2,13 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar.js';
 import Header from './components/Header/Header.js';
 import footer from './media/Footer_Frame.svg';
-import MainPage from './components/MainPage/MainPage.js';
+import MainPage from './components/MainPage/MainPage.js'
+import React from 'react'
+import Login from "./components/Login/Login";
+import Registration from "./components/Registration/Registration";
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+
 
 const login = "grotor"
 
