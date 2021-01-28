@@ -41,12 +41,20 @@ body{
 }
 .left-section__footer{
   position:absolute;
-  bottom: -4px;
   z-index:1000;
+    bottom: 0;
   width:100%;
-  
-
 }
+
+.left-section__footer__patch{
+    width: 100%;
+    height: 5px;
+    background-color: #2A363B;
+    position: absolute;
+    bottom: 0;
+    z-index: 100000;
+}
+
 .left-section__footer img{
   width:100%;
   height: 100%;

@@ -9,14 +9,22 @@ class AchivmentCarousel extends React.Component {
         super(props);
         this.state = {
             err: "",
-            currentAchievements: [],
+            currentAchievements: [
+                {
+                    _id: "",
+                    name: "",
+                    desc: "",
+                    maxValue: 0,
+                    currentValue: 0,
+                }
+            ]
         }
     }
 
     componentDidMount() {
         const achievements = this.props.userInf.achievements.map((element) => {
-            this.loadAchievementsFromServer(element._id_achievements, element.currentValue)
-        })
+            this.loadAchievementsFromServer(element._id_achievements, element.currentValue);
+        });
     }
 
     loadAchievementsFromServer(_id_achievements, currentValue) {
@@ -26,6 +34,12 @@ class AchivmentCarousel extends React.Component {
                 if (!res.success) {
                     this.setState({error: res.error});
                 } else {
+                    if (this.state.currentAchievements[0]._id === "") {
+                        this.setState({
+                            ...this.state,
+                            currentAchievements: [{...res.data, currentValue: currentValue}]
+                        });
+                    }
                     const currentAchievements = this.state.currentAchievements;
                     currentAchievements.push({...res.data, currentValue: currentValue})
                     this.setState({

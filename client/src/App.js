@@ -13,9 +13,31 @@ class App extends React.Component {
         super(props);
         this.state = {
             err: "",
-            currentUser: {}
-        };
+            currentUser: {
+                _id: "",
+                courses: [
+                    {
+                        _id_courses: "",
+                        currentValue: 0
+                    }
+                ],
+                achievements: [
+                    {
+                        _id_achievements: "",
+                        currentValue: 10
+                    }
+                ],
+                nickname: "",
+                name: "",
+                surname: "",
+                aboutMe: "",
+                email: "",
+                rating: 0,
+                role: ""
+            }
+        }
     }
+
 
     loadUserInfFromServer(login) {
         fetch(`/api/usersInfGet/${login}`)
@@ -38,7 +60,7 @@ class App extends React.Component {
             <Router>
                 <div className="App">
                     <div className="App-Wrapper">
-                        <Navbar  userInf={this.state.currentUser}/>
+                        <Navbar userInf={this.state.currentUser}/>
                         <div className="left-section">
                             <Header/>
                             <Switch>
@@ -54,9 +76,11 @@ class App extends React.Component {
                             </div>
                         </div>
                     </div>
+                    <div className="left-section__footer__patch"/>
                 </div>
             </Router>
         );
     }
 }
+
 export default App;

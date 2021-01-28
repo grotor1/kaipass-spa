@@ -8,61 +8,72 @@ const container = document.querySelector('container');
 const ps = new PerfectScrollbar(container);
 
 class TasksScrollbar extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         currentLessons: [],
-    //         currentCourses: []
-    //     };
-    // }
-    //
-    // componentDidMount() {
-    //     this.props.userInf.courses.map(element => {
-    //        this.loadCoursesFromServer(element._id_courses, element.currentLessons)
-    //     });
-    //     this.state.currentCourses.map(element => {
-    //
-    //     });
-    // }
-    //
-    // loadCoursesFromServer(_id_course, currentValue) {
-    //     fetch(`/api/coursesGet/${_id_course}`)
-    //         .then((data) => data.json())
-    //         .then((res) => {
-    //             if (!res.success) {
-    //                 this.setState({error: res.error});
-    //             } else {
-    //                 if(currentValue < res.data.lessonCount){
-    //                 const currentCourses = this.state.currentCourses;
-    //                 currentCourses.push({...res.data, currentValue: currentValue})
-    //                 this.setState({
-    //                         ...this.state,
-    //                         currentCourses: currentCourses
-    //                     }
-    //                 );} else{
-    //                     this.setState({error: "fy"});
-    //                 }
-    //             }
-    //         });
-    // }
-    //
-    // loadLessonsFromServer(_id_lesson) {
-    //     fetch(`/api/lessonsGet/${_id_lesson}`)
-    //         .then((data) => data.json())
-    //         .then((res) => {
-    //             if (!res.success) {
-    //                 this.setState({error: res.error});
-    //             } else {
-    //                 const currentLessons = this.state.currentLessons;
-    //                 currentLessons.push({...res.data})
-    //                 this.setState({
-    //                         ...this.state,
-    //                         currentLessons: currentLessons
-    //                     }
-    //                 );
-    //             }
-    //         });
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentLessons: [],
+            currentCourses: []
+        };
+    }
+
+    componentDidMount() {
+        this.setStateCourses();
+        this.setStateLesson();
+    }
+
+    setStateCourses() {
+        this.props.userInf.courses.map(element => {
+            console.log(element);
+            this.loadCoursesFromServer(element._id_courses, element.currentValue);
+        });
+    };
+
+    setStateLesson() {
+        this.state.currentCourses.map(element => {
+            const _id_lesson = element.lessons[element.currentLessons]._id_lesson;
+            this.loadLessonsFromServer(_id_lesson);
+        });
+    };
+
+    loadCoursesFromServer(_id_course, currentValue) {
+        fetch(`/api/coursesGet/${_id_course}`)
+            .then((data) => data.json())
+            .then((res) => {
+                if (!res.success) {
+                    this.setState({error: res.error});
+                } else {
+                    if (currentValue < res.data.lessonCount) {
+                        const currentCourses = this.state.currentCourses;
+                        currentCourses.push({...res.data, currentValue: currentValue});
+                        this.setState({
+                                ...this.state,
+                                currentCourses: currentCourses
+                            }
+                        );
+                    } else {
+                        this.setState({error: "fy"});
+                    }
+                }
+            });
+    }
+
+    loadLessonsFromServer(_id_lesson) {
+        fetch(`/api/lessonsGet/${_id_lesson}`)
+            .then((data) => data.json())
+            .then((res) => {
+                if (!res.success) {
+                    this.setState({error: res.error});
+                } else {
+                    const currentLessons = this.state.currentLessons;
+                    currentLessons.push({...res.data})
+                    this.setState({
+                            ...this.state,
+                            currentLessons: currentLessons
+                        }
+                    );
+                }
+            });
+    }
 
 
     render() {
