@@ -5,6 +5,7 @@ import footer from './media/Footer_Frame.svg';
 
 import MainPage from './components/MainPage/MainPage.js'
 import React from 'react'
+import MyCourses from "./components/MyCourses/MyCourses";
 import Login from "./components/Login/Login";
 import Registration from "./components/Registration/Registration";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
@@ -60,6 +61,7 @@ class App extends React.Component {
 
     render() {
         return (
+
             <Router>
                 <div className="App">
                     <Switch>
