@@ -175,6 +175,24 @@ router.post("/themesAdd", (req, res) => {
     });
 });
 
+router.post("/achievementsAdd", ((req, res) => {
+    const achievements = new Achievements();
+    const {name, desc, maxValue}= req.body;
+    if (!name || !desc || !maxValue) {
+        return res.json({
+            success: false,
+            error: 'You must provide an name, desc, maxValue'
+        });
+    };
+    achievements.name = name;
+    achievements.desc = desc;
+    achievements.maxValue = maxValue;
+    achievements.save(err => {
+        if (err) return res.json({success: false, error: err})
+        return res.json({success: true});
+    });
+}));
+
 router.get("/usersInfGet/:nickname", (req, res) => {
     const {nickname} = req.params;
     UserInf.findOne({"nickname": nickname}, (err, userInf) => {

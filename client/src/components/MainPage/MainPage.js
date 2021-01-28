@@ -9,6 +9,31 @@ import arrow from './media/right-arrow.svg'
 import TasksScrollbar from "./TasksScrollbar";
 
 class MainPage extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            coursesMain: [],
+            err: ""
+        }
+    }
+
+    componentDidMount() {
+        this.loadCoursesFromServer();
+    }
+
+    loadCoursesFromServer() {
+        fetch('/api/coursesGet')
+            .then(data => data.json())
+            .then((res) => {
+                if (!res.success) {
+                    this.setState({error: res.error});
+                } else {
+                    const sendData = res.data.slice(0, 4);
+                    this.setState({coursesMain: sendData});
+                }
+            });
+    }
+
     render(){
         return(
             <div className="mainpage-wrapper">
@@ -82,7 +107,7 @@ class MainPage extends React.Component{
                                 <h3>Будущие достижения</h3>
                             </div>
                             <div className="mainpage-wrapper__left-section__achivments-block__content">
-                                <AchivmentCarousel></AchivmentCarousel>
+                                <AchivmentCarousel userInf = {this.props.userInf}/>
                             </div>
                         </div>
                     </div>
@@ -101,7 +126,7 @@ class MainPage extends React.Component{
                         </div>
                         <div className="mainpage-wrapper__right-section__your-tasks__content">
                             <div className="mainpage-wrapper__right-section__your-tasks__content__top-section">
-                                <TasksScrollbar></TasksScrollbar>
+                                <TasksScrollbar userInf = {this.props.userInf}/>
                             </div>
                             <div className="mainpage-wrapper__right-section__your-tasks__content__stripe">
 

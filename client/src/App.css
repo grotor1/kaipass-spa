@@ -41,7 +41,7 @@ body{
 }
 .left-section__footer{
   position:absolute;
-  bottom:0;
+  bottom: -4px;
   z-index:1000;
   width:100%;
   
