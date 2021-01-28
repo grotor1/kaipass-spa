@@ -7,7 +7,7 @@ import MainPage from './components/MainPage/MainPage.js'
 import React from 'react'
 import Login from "./components/Login/Login";
 import Registration from "./components/Registration/Registration";
-import {BrowserRouter as Router, Route, Switch} from "react-router-d
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 const login = "grotor";
 
@@ -62,24 +62,56 @@ class App extends React.Component {
         return (
             <Router>
                 <div className="App">
-                    <div className="App-Wrapper">
-                        <Navbar userInf={this.state.currentUser}/>
-                        <div className="left-section">
-                            <Header/>
-                            <Switch>
-                                <Route exact path="/">
+                    <Switch>
+                        <Route exact path="/main">
+                            <div className="App-Wrapper">
+                                <Navbar userInf={this.state.currentUser}/>
+                                <div className="left-section">
+                                    <Header/>
                                     <MainPage userInf={this.state.currentUser}/>
-                                </Route>
-                                <Route exact path="/course">
-                                    c
-                                </Route>
-                            </Switch>
-                            <div className="left-section__footer">
-                                <img src={footer}/>
+                                    <div className="left-section__footer">
+                                        <img src={footer}/>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="left-section__footer__patch"/>
+                            <div className="left-section__footer__patch"/>
+                        </Route>
+                        <Route exact path="/courses">
+                            <div className="App-Wrapper">
+                                <Navbar userInf={this.state.currentUser}/>
+                                <div className="left-section">
+                                    <Header/>
+                                    <div className="left-section__footer">
+                                        <img src={footer}/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="left-section__footer__patch"/>
+                        </Route>
+                        <Route exact path = "/">
+                            <div className="App-Wrapper">
+                                <Navbar userInf={this.state.currentUser}/>
+                                <div className="left-section">
+                                    <Header/>
+                                    Добро пожаловать
+                                    <div className="left-section__footer">
+                                        <img src={footer}/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="left-section__footer__patch"/>
+                        </Route>
+                        <Route path="/login">
+                            <div className="App-Wrapper">
+                                <Login/>
+                            </div>
+                        </Route>
+                        <Route path="/registration">
+                            <div className="App-Wrapper">
+                                <Registration/>
+                            </div>
+                        </Route>
+                    </Switch>
                 </div>
             </Router>
         );

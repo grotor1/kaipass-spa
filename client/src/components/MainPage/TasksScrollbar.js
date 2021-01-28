@@ -23,80 +23,54 @@ class TasksScrollbar extends React.Component {
                 achievements: [{
                     _id_achievements: "",
                 }] //unnecessary
-            }],
-            currentCourses: []
+            }]
         };
     }
 
     componentDidMount() {
-        this.setStateCourses();
         this.setStateLesson();
     }
 
-    setStateCourses() {
+    setStateLesson() {
         this.props.userInf.courses.map(element => {
             console.log(element);
-            this.loadCoursesFromServer(element._id_courses, element.currentValue);
+            this.loadFromServer(element._id_courses, element.currentValue);
         });
     };
 
-    setStateLesson() {
-        console.log(this.state);
-        this.state.currentCourses.map(element => {
-            console.log(element);
-            const _id_lesson = element.lessons[element.currentLessons]._id_lesson;
-            const name = element.name;
-            this.loadLessonsFromServer(_id_lesson, name);
-        });
-    };
-
-
-    loadLessonsFromServer(_id_lesson, name) {
-        fetch(`/api/lessonsGet/${_id_lesson}`)
-            .then((data) => data.json())
-            .then((res) => {
-                console.log()
-                if (!res.success) {
-                    this.setState({error: res.error});
-                } else {
-                    console.log(res.data);
-                    if (this.state.currentLessons[0].name === "") {
-                        this.setState({
-                            ...this.state,
-                            currentLessons: [{...res.data, name: name}]
-                        }, () => {
-                            console.log(true);
-                        });
-                    } else {
-                        const currentLessons = this.state.currentLessons;
-                        currentLessons.push({...res.data, name: name})
-                        this.setState({
-                                ...this.state,
-                                currentLessons: currentLessons
-                            }
-                        );
-                    }
-                }
-            })
-    }
-
-
-    loadCoursesFromServer(_id_course, currentValue) {
+    loadFromServer(_id_course, currentValue) {
         fetch(`/api/coursesGet/${_id_course}`)
             .then((data) => data.json())
             .then((res) => {
-                    console.log(res.data);
                     if (!res.success) {
                         this.setState({error: res.error});
                     } else {
-                        const currentCourses = this.state.currentCourses;
-                        currentCourses.push({...res.data, currentValue: currentValue});
-                        console.log(currentCourses);
-                        this.setState({
-                                ...this.state,
-                                currentCourses: currentCourses
-                            }
-                        );
+                        const _id_lesson = res.data.lessons[currentValue]._id_lesson;
+                        const name = res.data.name;
+                        fetch(`/api/lessonsGet/${_id_lesson}`)
+                            .then((data) => data.json())
+                            .then((res) => {
+                                if (!res.success) {
+                                    this.setState({error: res.error});
+                                } else {
+                                    if (this.state.currentLessons[0].name === "") {
+                                        this.setState({
+                                            ...this.state,
+                                            currentLessons: [{...res.data, nameTheme: name}]
+                                        }, () => {
+                                            console.log(true);
+                                        });
+                                    } else {
+                                        const currentLessons = this.state.currentLessons;
+                                        currentLessons.push({...res.data, nameTheme: name})
+                                        this.setState({
+                                                ...this.state,
+                                                currentLessons: currentLessons
+                                            }
+                                        );
+                                    }
+                                }
+                            })
                     }
                 }
             );
@@ -120,7 +94,7 @@ class TasksScrollbar extends React.Component {
                                         className="mainpage-wrapper__right-section__your-tasks__content__top-section__tasks-container__item__preview"></div>
                                     <div
                                         className="mainpage-wrapper__right-section__your-tasks__content__top-section__tasks-container__item__text">
-                                        <p>{element.name}<br/><span>{element.name}</span></p>
+                                        <p>{element.name}<br/><span>{element.nameTheme}</span></p>
                                     </div>
                                     <div
                                         className="mainpage-wrapper__right-section__your-tasks__content__top-section__tasks-container__item__arrow">

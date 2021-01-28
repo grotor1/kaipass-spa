@@ -193,6 +193,14 @@ router.post("/achievementsAdd", ((req, res) => {
     });
 }));
 
+router.get("/userLogGet/:login", ((req, res) => {
+    const {login} = req.params;
+    UserLog.findOne({"login":login}, (err, userLog) =>{
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: userLog});
+    });
+}));
+
 router.get("/usersInfGet/:nickname", (req, res) => {
     const {nickname} = req.params;
     UserInf.findOne({"nickname": nickname}, (err, userInf) => {
