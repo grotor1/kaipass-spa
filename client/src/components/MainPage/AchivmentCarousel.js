@@ -6,6 +6,7 @@ import item from "./item";
 import './AchivmentCarousel.css'
 
 class AchivmentCarousel extends React.Component{
+
     render() {
         return(
             <Carousel itemsToShow={3} itemsToScroll={1} >
