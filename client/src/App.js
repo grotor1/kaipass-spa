@@ -5,24 +5,14 @@ import Header from './components/Header/Header.js'
 import footer from './media/Footer_Frame.svg';
 import MainPage from './components/MainPage/MainPage.js'
 import React from 'react'
+import Login from "./components/Login/Login";
 
 
 class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <div className="App-Wrapper">
-                    <Navbar></Navbar>
-                    <div className="left-section">
-                        <Header></Header>
-                        <MainPage></MainPage>
-
-
-                        <div className="left-section__footer">
-                            <img src={footer}></img>
-                        </div>
-                    </div>
-                </div>
+               <Login></Login>
             </div>
         );
     }

@@ -12,7 +12,7 @@ class TasksScrollbar extends React.Component{
         return(
             <PerfectScrollbar>
                 <div id="container" className="mainpage-wrapper__right-section__your-tasks__content__top-section__tasks-container scrollbar-primary">
-                    <div className="mainpage-wrapper__right-section__your-tasks__content__top-section__tasks-container__item border-color-change">
+                    <div className="mainpage-wrapper__right-section__your-tasks__content__top-section__tasks-container__item border-color-change first-item">
                         <a href="">
                         <div className="mainpage-wrapper__right-section__your-tasks__content__top-section__tasks-container__item__theme"></div>
                         <div className="mainpage-wrapper__right-section__your-tasks__content__top-section__tasks-container__item__preview"></div>
