@@ -5,6 +5,7 @@ const CoursesSchema = new Schema({
     name: String, //necessary
     desc: String, //necessary
     hours: Number, //necessary
+    previewTitle: String, //necessary
     previewSrc: String, //necessary
     usersCount: Number, //unnecessary for init
     lessonCount: Number, //necessary

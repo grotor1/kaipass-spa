@@ -23,13 +23,16 @@
     height: 12%;
     align-content: center;
     justify-content: center;
-
 }
 .navbar__logo-holder__main-hold{
     display: flex;
     align-content: center;
     justify-content: center;
     height: 100%;
+}
+.navbar__logo-holder__main-hold img{
+    height: 44px;
+    align-self: center;
 }
 .navbar__logo-holder p{
     font-size: 24px;
