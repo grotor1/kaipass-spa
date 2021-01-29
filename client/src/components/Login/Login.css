@@ -9,7 +9,7 @@
     height: 100vh;
     display: flex;
     position: relative;
-    background-image: url("./media/fuji-mountain-sunrise.jpg");
+    background-image: url("./media/fuji-mountain.svg");
     background-size: cover;
     z-index: -10000;
 

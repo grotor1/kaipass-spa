@@ -8,7 +8,7 @@ import React from 'react'
 import MyCourses from "./components/MyCourses/MyCourses";
 import Login from "./components/Login/Login";
 import Registration from "./components/Registration/Registration";
-
+import LessonsPage from "./components/LessonsPage/LessonsPage";
 
 class App extends React.Component {
     render() {
@@ -19,7 +19,7 @@ class App extends React.Component {
 
                    <div className="left-section">
                        <Header></Header>
-                       <MyCourses></MyCourses>
+                       <LessonsPage></LessonsPage>
                        <div className="left-section__footer">
                            <img src={footer} alt=""/>
                            <div className="left-section__footer__patch"></div>

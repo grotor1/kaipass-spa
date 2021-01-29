@@ -13,12 +13,12 @@ const ps = new PerfectScrollbar(container);
 class MyCourses extends React.Component{
     render() {
         return(
-            <div className="my-courses-wrapper">
+            <div className="lesson-page-wrapper">
                 <div className="my-courses-wrapper__left-section">
                     <div className="my-courses-wrapper__left-section__title">
                         <p>Мои курсы: <span>nnn</span></p>
                     </div>
-                    <div className="my-courses-wrapper__left-section__content">
+                    <div className="my-courses-wrapper__left-section__content white-background">
                         <PerfectScrollbar>
                             <div id="container" className="my-courses-wrapper__left-section__content__courses-list scrollbar-primary">
                                 <div className="my-courses-wrapper__left-section__content__courses-list__item first-item">
@@ -207,7 +207,7 @@ class MyCourses extends React.Component{
                             </div>
                             <div className="my-courses-wrapper__right-section__content-bottom__under">
                                 <div className="my-courses-wrapper__right-section__content-bottom__under-left">
-                                    
+
                                 </div>
                                 <div className="my-courses-wrapper__right-section__content-bottom__under-right">
 

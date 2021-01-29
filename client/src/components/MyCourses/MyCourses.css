@@ -1,9 +1,9 @@
-.my-courses-wrapper > p{
+.lesson-page-wrapper > p{
     margin: 0;
     font-weight: 500;
 }
 
-.my-courses-wrapper{
+.lesson-page-wrapper{
     position: relative;
     display:flex;
     z-index: 100;
