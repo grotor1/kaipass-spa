@@ -42,7 +42,7 @@
 }
 
 
-.progressbar{
+.progressbar-2{
     margin-left: 10px;
     height: 8px;
     position: relative;
@@ -53,7 +53,7 @@
     padding: 0;
     box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
 }
-.progressbar > span {
+.progressbar-2 > span {
     display: block;
     height: 100%;
     background-color: var(--cred);
