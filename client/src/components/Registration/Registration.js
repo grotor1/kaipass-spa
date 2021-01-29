@@ -20,7 +20,8 @@ class Registration extends React.Component {
                                 <p>Уже зарегистрировали аккаунт в <span>Kai</span>Pass</p>
                             </div>
                             <Link to="/login">
-                                <div className="registration-wrapper__content__left-section__login-content__button hvr-forward ">
+                                <div
+                                    className="registration-wrapper__content__left-section__login-content__button hvr-forward ">
                                     <p>Войти</p>
                                     <img src={right_arrow_login} alt=""/>
                                 </div>
@@ -53,13 +54,14 @@ class Registration extends React.Component {
                                 <input type="text" required=""/>
                                 <label>Повторите пароль</label>
                             </div>
-                            <div
-                                className="login-wrapper__content__right-section__registration-content__button hvr-grow-shadow">
-                                <Link to="/login">
+                            <Link to="/login">
+
+                                <div
+                                    className="login-wrapper__content__right-section__registration-content__button hvr-grow-shadow">
                                     <p>Создать</p>
                                     <img src={right_arrow_login} alt=""/>
-                                </Link>
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
