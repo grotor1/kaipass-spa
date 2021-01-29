@@ -71,7 +71,7 @@ class MyCourses extends React.Component {
                     <div className="my-courses-wrapper__left-section__title">
                         <p>Мои курсы: <span>nnn</span></p>
                     </div>
-                    <div className="my-courses-wrapper__left-section__content">
+                    <div className="my-courses-wrapper__left-section__content white-background">
                         <PerfectScrollbar>
                             {this.state.currentCourses.map(element => {
                                 return (
