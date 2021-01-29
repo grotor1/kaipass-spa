@@ -3,10 +3,11 @@ import './Registration.css'
 import right_svg from './media/vector1.svg'
 import left_svg from './media/vector2.svg'
 import right_arrow_login from "../Login/media/right-arrow-login.svg";
+import {Link, withRouter} from "react-router-dom";
 
-class Registration extends React.Component{
+class Registration extends React.Component {
     render() {
-        return(
+        return (
             <div className="registration-wrapper">
                 <div className="registration-wrapper__content">
                     <div className="registration-wrapper__content__left-section">
@@ -18,12 +19,13 @@ class Registration extends React.Component{
                             <div className="registration-wrapper__content__left-section__login-content__under-title">
                                 <p>Уже зарегистрировали аккаунт в <span>Kai</span>Pass</p>
                             </div>
-                            <div className="registration-wrapper__content__left-section__login-content__button hvr-forward ">
-                                <p>Войти</p>
-                                <img src={right_arrow_login} alt=""/>
-                            </div>
-
-                        </div>g
+                            <Link to="/login">
+                                <div className="registration-wrapper__content__left-section__login-content__button hvr-forward ">
+                                    <p>Войти</p>
+                                    <img src={right_arrow_login} alt=""/>
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                     <div className="registration-wrapper__content__right-section">
                         <img className='right-svg' src={left_svg} alt=""/>
@@ -31,7 +33,8 @@ class Registration extends React.Component{
                             <div className="registration-wrapper__content__right-section__registration-content__title">
                                 <p>Регистрация</p>
                             </div>
-                            <div className="registration-wrapper__content__right-section__registration-content__under-title">
+                            <div
+                                className="registration-wrapper__content__right-section__registration-content__under-title">
                                 <p>Создайте свой <span>Kai</span>Pass</p>
                             </div>
                             <div className="input-container">
@@ -50,12 +53,12 @@ class Registration extends React.Component{
                                 <input type="text" required=""/>
                                 <label>Повторите пароль</label>
                             </div>
-                            <div className="login-wrapper__content__right-section__registration-content__button hvr-grow-shadow">
-                                <a>
+                            <div
+                                className="login-wrapper__content__right-section__registration-content__button hvr-grow-shadow">
+                                <Link to="/login">
                                     <p>Создать</p>
                                     <img src={right_arrow_login} alt=""/>
-                                </a>
-
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -65,4 +68,4 @@ class Registration extends React.Component{
     }
 }
 
-export default Registration
+export default withRouter(Registration)

@@ -10,9 +10,62 @@ const container = document.querySelector('container');
 const ps = new PerfectScrollbar(container);
 
 
-class MyCourses extends React.Component{
+class MyCourses extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentCourses: [{
+                name: "", //necessary
+                desc: "", //necessary
+                hours: 0, //necessary
+                previewTitle: "", //necessary
+                previewSrc: "", //necessary
+                usersCount: "", //unnecessary for init
+                lessonCount: 0, //necessary
+                lessons: [{_id_lesson: ""}], //necessary
+                achievements: [{
+                    _id_achievements: "",
+                }]
+            }]
+        }
+    }
+
+    componentDidMount() {
+        this.props.userInf.courses.map(element => {
+            console.log(element);
+            this.loadCoursesFromServer(element._id_courses);
+        });
+    }
+
+    loadCoursesFromServer(_id_course) {
+        fetch(`/api/coursesGet/${_id_course}`)
+            .then((data) => data.json())
+            .then((res) => {
+                if (!res.success) {
+                    this.setState({error: res.error});
+                } else {
+                    if (this.state.currentCourses[0].name === "") {
+                        this.setState({
+                            ...this.state,
+                            currentCourses: [{...res.data}]
+                        }, () => {
+                            console.log(true);
+                        });
+                    } else {
+                        const currentCourses = this.state.currentCourses;
+                        currentCourses.push({...res.data})
+                        this.setState({
+                                ...this.state,
+                                currentCourses: currentCourses
+                            }
+                        );
+                    }
+                }
+            });
+    }
+
     render() {
-        return(
+        return (
             <div className="my-courses-wrapper">
                 <div className="my-courses-wrapper__left-section">
                     <div className="my-courses-wrapper__left-section__title">
@@ -20,143 +73,37 @@ class MyCourses extends React.Component{
                     </div>
                     <div className="my-courses-wrapper__left-section__content">
                         <PerfectScrollbar>
-                            <div id="container" className="my-courses-wrapper__left-section__content__courses-list scrollbar-primary">
-                                <div className="my-courses-wrapper__left-section__content__courses-list__item first-item">
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__image">
-                                        <img src="" alt=""/>
-                                    </div>
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__title">
-                                        <p>ReactJS для новичков в программировании <br/>
-                                            <span>
-                                                Автор: Багрянский Константин<br/>
-                                                Кол-во часов: 42ч<br/>
-                                                Участники: 1561<br/>
-
+                            {this.state.currentCourses.map(element => {
+                                return (
+                                    <div id="container"
+                                         className="my-courses-wrapper__left-section__content__courses-list scrollbar-primary">
+                                        <div
+                                            className="my-courses-wrapper__left-section__content__courses-list__item first-item">
+                                            <div
+                                                className="my-courses-wrapper__left-section__content__courses-list__item__image">
+                                                <img src="" alt=""/>
+                                            </div>
+                                            <div
+                                                className="my-courses-wrapper__left-section__content__courses-list__item__title">
+                                                <p>{element.name}<br/>
+                                                    <span>
+                                                Кол-во часов: {element.hours}ч<br/>
+                                                Участники: {element.userCount}<br/>
                                             </span>
-                                        </p>
-                                    </div>
-                                    <a href="">
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__button hvr-forward">
-                                        <p>Продолжить</p>
-                                        <img src={arrow_course} alt=""/>
-                                    </div>
-                                    </a>
-
-                                </div>
-                                <div className="my-courses-wrapper__left-section__content__courses-list__item ">
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__image">
-                                        <img src="" alt=""/>
-                                    </div>
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__title">
-                                        <p>ReactJS для новичков в программировании <br/>
-                                            <span>
-                                                Автор: Багрянский Константин<br/>
-                                                Кол-во часов: 42ч<br/>
-                                                Участники: 1561<br/>
-
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <a href="">
-                                        <div className="my-courses-wrapper__left-section__content__courses-list__item__button hvr-forward">
-                                            <p>Продолжить</p>
-                                            <img src={arrow_course} alt=""/>
+                                                </p>
+                                            </div>
+                                            <a href="">
+                                                <div
+                                                    className="my-courses-wrapper__left-section__content__courses-list__item__button hvr-forward">
+                                                    <p>Продолжить</p>
+                                                    <img src={arrow_course} alt=""/>
+                                                </div>
+                                            </a>
                                         </div>
-                                    </a>
-
-                                </div>
-                                <div className="my-courses-wrapper__left-section__content__courses-list__item ">
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__image">
-                                        <img src="" alt=""/>
                                     </div>
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__title">
-                                        <p>ReactJS для новичков в программировании <br/>
-                                            <span>
-                                                Автор: Багрянский Константин<br/>
-                                                Кол-во часов: 42ч<br/>
-                                                Участники: 1561<br/>
-
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <a href="">
-                                        <div className="my-courses-wrapper__left-section__content__courses-list__item__button hvr-forward">
-                                            <p>Продолжить</p>
-                                            <img src={arrow_course} alt=""/>
-                                        </div>
-                                    </a>
-
-                                </div>
-                                <div className="my-courses-wrapper__left-section__content__courses-list__item ">
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__image">
-                                        <img src="" alt=""/>
-                                    </div>
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__title">
-                                        <p>ReactJS для новичков в программировании <br/>
-                                            <span>
-                                                Автор: Багрянский Константин<br/>
-                                                Кол-во часов: 42ч<br/>
-                                                Участники: 1561<br/>
-
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <a href="">
-                                        <div className="my-courses-wrapper__left-section__content__courses-list__item__button hvr-forward">
-                                            <p>Продолжить</p>
-                                            <img src={arrow_course} alt=""/>
-                                        </div>
-                                    </a>
-
-                                </div>
-                                <div className="my-courses-wrapper__left-section__content__courses-list__item ">
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__image">
-                                        <img src="" alt=""/>
-                                    </div>
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__title">
-                                        <p>ReactJS для новичков в программировании <br/>
-                                            <span>
-                                                Автор: Багрянский Константин<br/>
-                                                Кол-во часов: 42ч<br/>
-                                                Участники: 1561<br/>
-
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <a href="">
-                                        <div className="my-courses-wrapper__left-section__content__courses-list__item__button hvr-forward">
-                                            <p>Продолжить</p>
-                                            <img src={arrow_course} alt=""/>
-                                        </div>
-                                    </a>
-
-                                </div>
-                                <div className="my-courses-wrapper__left-section__content__courses-list__item last-item">
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__image">
-                                        <img src="" alt=""/>
-                                    </div>
-                                    <div className="my-courses-wrapper__left-section__content__courses-list__item__title">
-                                        <p>ReactJS для новичков в программировании <br/>
-                                            <span>
-                                                Автор: Багрянский Константин<br/>
-                                                Кол-во часов: 42ч<br/>
-                                                Участники: 1561<br/>
-
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <a href="">
-                                        <div className="my-courses-wrapper__left-section__content__courses-list__item__button hvr-forward">
-                                            <p>Продолжить</p>
-                                            <img src={arrow_course} alt=""/>
-                                        </div>
-                                    </a>
-
-                                </div>
-
-                            </div>
+                                );
+                            })}
                         </PerfectScrollbar>
-
                     </div>
                 </div>
                 <div className="my-courses-wrapper__right-section">
@@ -182,18 +129,21 @@ class MyCourses extends React.Component{
                         <div className="my-courses-wrapper__right-section__content-center">
                             <div className="my-courses-wrapper__right-section__content-center__achivment-item">
                                 <img src={achievment} alt=""/>
-                                <div className="my-courses-wrapper__right-section__content-center__achivment-item__type platinum">
+                                <div
+                                    className="my-courses-wrapper__right-section__content-center__achivment-item__type platinum">
                                 </div>
                                 <p>Мастер JS</p>
                             </div>
                             <div className="my-courses-wrapper__right-section__content-center__achivment-item">
                                 <img src={achievment} alt=""/>
-                                <div className="my-courses-wrapper__right-section__content-center__achivment-item__type silver"></div>
+                                <div
+                                    className="my-courses-wrapper__right-section__content-center__achivment-item__type silver"></div>
                                 <p>Прилежный ученик</p>
                             </div>
                             <div className="my-courses-wrapper__right-section__content-center__achivment-item">
                                 <img src={achievment} alt=""/>
-                                <div className="my-courses-wrapper__right-section__content-center__achivment-item__type bronze"></div>
+                                <div
+                                    className="my-courses-wrapper__right-section__content-center__achivment-item__type bronze"></div>
                                 <p>Уже бывалый</p>
                             </div>
                         </div>
@@ -207,7 +157,7 @@ class MyCourses extends React.Component{
                             </div>
                             <div className="my-courses-wrapper__right-section__content-bottom__under">
                                 <div className="my-courses-wrapper__right-section__content-bottom__under-left">
-                                    
+
                                 </div>
                                 <div className="my-courses-wrapper__right-section__content-bottom__under-right">
 

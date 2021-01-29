@@ -2,13 +2,13 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar.js';
 import Header from './components/Header/Header.js';
 import footer from './media/Footer_Frame.svg';
-
 import MainPage from './components/MainPage/MainPage.js'
 import React from 'react'
 import MyCourses from "./components/MyCourses/MyCourses";
 import Login from "./components/Login/Login";
 import Registration from "./components/Registration/Registration";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+
 
 const login = "grotor";
 
@@ -83,6 +83,7 @@ class App extends React.Component {
                                 <Navbar userInf={this.state.currentUser}/>
                                 <div className="left-section">
                                     <Header/>
+                                    <MyCourses userInf={this.state.currentUser}/>
                                     <div className="left-section__footer">
                                         <img src={footer}/>
                                     </div>
@@ -90,7 +91,7 @@ class App extends React.Component {
                             </div>
                             <div className="left-section__footer__patch"/>
                         </Route>
-                        <Route exact path = "/">
+                        <Route exact path="/">
                             <div className="App-Wrapper">
                                 <Navbar userInf={this.state.currentUser}/>
                                 <div className="left-section">
@@ -104,14 +105,10 @@ class App extends React.Component {
                             <div className="left-section__footer__patch"/>
                         </Route>
                         <Route path="/login">
-                            <div className="App-Wrapper">
-                                <Login/>
-                            </div>
+                            <Login/>
                         </Route>
                         <Route path="/registration">
-                            <div className="App-Wrapper">
-                                <Registration/>
-                            </div>
+                            <Registration/>
                         </Route>
                     </Switch>
                 </div>

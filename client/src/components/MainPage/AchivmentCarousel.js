@@ -73,7 +73,7 @@ class AchivmentCarousel extends React.Component {
                                 </div>
                                 <div
                                     className="mainpage-wrapper__left-section__achivments-block__content__carousel-achive__text__progressbar">
-                                    <div className="progressbar">
+                                    <div className="progressbar-2">
                                         <span></span>
                                     </div>
                                     <p>{element.currentValue}/{element.maxValue}</p>
